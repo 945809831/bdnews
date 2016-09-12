@@ -13,6 +13,7 @@ $(document).ready(function() {
   /**
    *  单击对话框的增加新闻提交新闻内容，阻止默认的跳转
    */
+  /*
   $('#news-eidt-form').submit(function(event){
       var newsInfo = $(this).serializeArray();
       event.preventDefault();
@@ -27,11 +28,12 @@ $(document).ready(function() {
                   }
               });
   });
+  */
   /**
    *   根据新闻标题的类别刷新新闻列表
    */
   var updateNewsTable = function(category){
-      $('#m-category').value(category);
+      $('#m-category').val(category);
       var tableContent = $("news-list");
       $.get('news-manage/list?category=' + category, function(data, status){
           $('#news-list').html(data);

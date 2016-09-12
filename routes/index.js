@@ -33,7 +33,10 @@ router.get('/news-manage/add', function(req, res, next){
 
    try{
        news.addNews(title, newsDate, picture, abstract, category, label, likes);
-       res.end("OK");
+       news.getByCategory(category, function(rows){
+         res.render('news-manager.jade', {list: rows});
+         res.end();
+       });
    } catch (err) {
        throw(err);
    }
