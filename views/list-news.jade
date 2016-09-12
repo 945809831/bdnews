@@ -1,0 +1,13 @@
+each row in list
+  tr
+    td= row.id
+    td= row.title
+    td= row.newsDate
+    td= row.picture
+    td= row.abstract
+    td= row.label
+    td= row.likes
+    td 
+      a#delete-news(href='#', data-id = row.id) 删除
+      a#edit-news(href='#', data-id=row.id) 修改
+    

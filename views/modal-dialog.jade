@@ -1,0 +1,61 @@
+// 模态窗口
+// 用于增加新增的新闻条目和修改新闻条目
+div#news-edit-dialog.modal.fade(role='dialog')
+ div.modal-dialog
+  div.modal-content
+    // 具体的窗口内容
+    div.modal-header
+      button.close(type = 'button', data-dismiss='modal') &times;
+      h4.modal-title#dialog-title 修改新闻
+        span#news-id
+    
+    //modal dialog body
+    div.modal-body
+      form#news-eidt-form.form-horizontal.news-input(method='get', action='news-manage/add')
+        // 新闻标题
+        div.form-group
+          label.col-sm-2.control-label(for = 'title') 新闻标题
+          div.col-sm-10
+            input#m-title.form-control(type='text', name='title', placeholder='新闻标题', required='required')
+        
+        //时间输入框
+        div.form-group
+          label.col-sm-2.control-label(for='newsDate') 时间
+          div.col-sm-10
+            input#m-newsDate.form-control(type='text', name='newsDate', placeholder='yyyy-mm-dd', required='required')
+        
+        //图片输入框
+        div.form-group
+          label.col-sm-2.control-label(for='picture') 图片
+          div.col-sm-10
+            input#m-picture.form-control(type='text', name='picture', placeholder='图片')
+            
+        //摘要
+        div.form-group
+          label.col-sm-2.control-label(for='abstract') 摘要
+          div.col-sm-10
+            input#m-abstract.form-control(type='text', name='abstract', placeholder='摘要')
+            
+        //类别
+        div.form-group(style='display:none')
+          label.col-sm-2.control-label(for='category') 类别
+          div.col-sm-10
+            input#m-category.form-control(type='text', name='category', value='recomendation')
+        
+        //来源
+        div.form-group
+          label.col-sm-2.control-label(for='label') 来源
+          div.col-sm-10
+            input#m-label.form-control(type='text', name='label', placeholder='来源') 
+        
+        //点赞
+        div.form-group
+          label.col-sm-2.control-label(for='likes') 点赞
+          div.col-sm-10
+            input#m-likes.form-control(type='text', name='likes', placeholder='点赞')
+
+        //修改按钮
+        div.form-group
+          div.col-sm-offset-2.col-sm-10
+            button#m-insert-news-btn.btn.btn-default(type='submit') 修改
+            button.btn.btn-success(data-dismiss='modal') 关闭

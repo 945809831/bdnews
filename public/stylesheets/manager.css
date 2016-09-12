@@ -1,0 +1,50 @@
+/*设置窗口的最小宽度*/
+body{
+	min-width: 1000px;
+}
+/*新闻类别列表的样式*/
+#news-category-list{
+	padding: 40px 10px 10px 30px;
+	font-size: 18px;
+  background: #f5f5f5;
+}
+#news-category-list ul {
+	list-style: none;
+}
+#news-category-list ul li{
+	height: 40px;
+	color: #428bca;
+	line-height: 40px;
+	margin-bottom: 2px;
+}
+#news-category-list ul li:hover{
+	background: #eee;
+}
+
+/*当前的新闻类别的标题*/
+#news-category-title{
+	height: 36px;
+	color: red;
+	border-bottom: 1px solid grey;
+}
+#news-category{
+	display: inline-block;
+	float: left;
+	font-size: 26px;
+	line-height: 36px;
+}
+#add-item{
+	float: right;
+}
+#news-list tr td {
+	overflow: hidden;
+}
+/*模态窗口默认不显示*/
+#news-edit-dialog{
+	display: none;
+}
+#dialog-title {
+	color: blue;
+	font-weight: bold;
+	font-size:  20px;
+}

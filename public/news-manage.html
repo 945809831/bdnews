@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>新闻管理系统</title>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/manager.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="page-header">
+                <h1>新闻管理系统<small>新闻的增删改查</small></h1>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row news-operation">
+            <ul class="nav nav-tabs" role="tablist">
+                <li id="list-news-tab" role="presentation">
+                    <a href="#list-news" role="tab" data-toggle="tab">新闻列表</a>
+                </li>
+                <li role="presentation" class="active">
+                    <a href="#new-news" role="tab" data-toggle="tab">添加新闻条目</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12  tab-content">
+                <!-- 新闻列表视图 -->
+                <div role="tabpanel" class="tab-pane" id="list-news">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>id</td>
+                                <td>标题</td>
+                                <td>时间</td>
+                                <td>图片</td>
+                                <td>摘要</td>
+                                <td>类别</td>
+                                <td>来源标签</td>
+                                <td>点赞</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 增加新闻条目视图 -->
+                <div role="tabpanel" class="tab-pane active" id="new-news">
+                    <form id="news-input" class="form-horizontal news-input" method="get" action="lib/add-news.php">
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">新闻标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="新闻标题" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="picture" class="col-sm-2 control-label">图片</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="picture" name="picture" placeholder="图片">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="abstract" class="col-sm-2 control-label">摘要</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="abstract" name="abstract" placeholder="摘要">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsDate" class="col-sm-2 control-label">时间</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="newsDate" name="newsDate" placeholder="yyyy-mm-dd hh:mm:ss" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="col-sm-2 control-label">类别</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input type="radio" name="category" id="inlineRadio1" value="recomendation" checked="checked"> 推荐
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="category" id="inlineRadio2" value="integrate"> 百家
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="category" id="inlineRadio3" value="local"> 本地
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="category" id="inlineRadio3" value="picture"> 图片
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="category" id="inlineRadio3" value="amusement"> 娱乐
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="category" id="inlineRadio3" value="society"> 社会
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="label" class="col-sm-2 control-label">来源</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="label" name="label" placeholder="新闻来源标签">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="likes" class="col-sm-2 control-label">点赞</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="likes" name="likes" placeholder="点赞吧">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" id="insert-news-btn">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="alert alert-success" id="result">
+                        <strong>操作结果：</strong> <span ></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================================ -->
+        <!-- 修改新闻条目的模态窗口 -->
+        <div class="modal fade" id="edit-news" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">修改新闻[ID = <span id="news-id"></span>]</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 要更改的表单项目 -->
+                        <form id="news-edit" class="form-horizontal news-input" method="get" action="lib/add-news.php">
+                        <input id="m-id" name="id" style="display:none">
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">新闻标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="m-title" name="title" placeholder="新闻标题" required="required">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="newsDate" class="col-sm-2 control-label">时间</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="m-newsDate" name="newsDate" placeholder="yyyy-mm-dd hh:mm:ss" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="picture" class="col-sm-2 control-label">图片</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="m-picture" name="picture" placeholder="图片">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="abstract" class="col-sm-2 control-label">摘要</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="m-abstract" name="abstract" placeholder="摘要">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="category" class="col-sm-2 control-label">类别</label>
+                            <div class="col-sm-10">
+                                <label class="m-category">
+                                    <input type="radio" name="category" id="inlineRadio1" value="recomendation" checked="checked"> 推荐
+                                </label>
+                                <label class="m-category">
+                                    <input type="radio" name="category" id="inlineRadio2" value="integrate"> 百家
+                                </label>
+                                <label class="m-category">
+                                    <input type="radio" name="category" id="inlineRadio3" value="local"> 本地
+                                </label>
+                                <label class="m-category">
+                                    <input type="radio" name="category" id="inlineRadio3" value="picture"> 图片
+                                </label>
+                                <label class="m-category">
+                                    <input type="radio" name="category" id="inlineRadio3" value="amusement"> 娱乐
+                                </label>
+                                <label class="m-category">
+                                    <input type="radio" name="category" id="inlineRadio3" value="society"> 社会
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="label" class="col-sm-2 control-label">来源</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="m-label" name="label" placeholder="新闻来源标签">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="likes" class="col-sm-2 control-label">点赞</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="m-likes" name="likes" placeholder="点赞吧">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" id="m-insert-news-btn">修改</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- container结束 -->
+    </div>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/bootstrap-datetimepicker.js" charset="utf-8"></script>
+    <script src="javascripts/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="javascripts/manager.js" ></script>
+</body>
+
+</html>

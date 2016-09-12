@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/manager.css')
+  body
+    header
+      div.container
+        div.page-header
+          h1 新闻管理系统
+            small 新闻的增删改查
+            
+    div.container#content
+      div.row
+        div#news-category-list.col-sm-2.sidebar
+          ul
+            li 
+              a(href='#recomendation' data-category='recomendation') 推荐
+            li
+              a(href='#integrate' data-category='integrate') 百家
+            li
+              a(href='#locales', data-category='local') 本地
+            li
+              a(href='#picture', data-category='picture') 图片
+            li
+              a(href='#amusement', data-category='amusement') 娱乐
+            li
+              a(href='#society', data-category='society') 社会
+
+        div#news-items.col-md-10.tab-content
+            div#news-category-title 
+              span#news-category recomendation
+              button.btn.btn-primary.btn-sm#add-item(type="button") 点击增加新闻条目
+            table.table.table-striped
+              thead
+                tr
+                  td #
+                  td 标题
+                  td 时间
+                  td 图片
+                  td 摘要
+                  td 来源
+                  td 点赞
+                  td 操作
+              tbody#news-list
+                  include list-news
+    // 引入模态窗口，用于修改及添加新闻标题             
+    include modal-dialog
+    include modal-message
+    // 引入系统中用到的脚本文件  
+    script(src='javascripts/jquery.js')
+    script(src='javascripts/bootstrap.js')
+    script(src='javascripts/manager.js')

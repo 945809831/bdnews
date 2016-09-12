@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1.0">
+    <title>百度新闻</title>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/app.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+    <!--顶部工具栏-->
+    <header class="col-xs-12">
+        <div class="toolbar">
+            <!--右侧的百度和主页图标-->
+            <div class="toolbar-left">
+                <div class="toolbar-btn btn-baidu"></div>
+                <div class="toolbar-btn btn-home"></div>
+            </div>
+            <!--左侧的查找和订阅图标-->
+            <div class="toolbar-right">
+                <div class="toolbar-btn btn-search"></div>
+                <div class="toolbar-btn btn-subscribe"></div>
+            </div>
+        </div>
+        <nav>
+            <div class="divider"></div>
+            <table>
+                <tbody id="navigation">
+                    <tr class="first-line">
+                        <td><a href="#">推荐</a><b></b></td>
+                        <td><a href="#">百家</a><b></b></td>
+                        <td><a href="#">本地</a><b></b></td>
+                        <td><a href="#">图片</a><b></b></td>
+                        <td><a href="#">娱乐</a><b></b></td>
+                        <td><a href="#">社会</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">军事</a><b></b></td>
+                        <td><a href="#">女人</a><b></b></td>
+                        <td><a href="#">搞笑</a><b></b></td>
+                        <td><a href="#">科技</a></td>
+                        <td colspan="2"><a id="more" href="#">更多
+                <div class="up-triangle"></div>
+            </a></td>
+                    </tr>
+                    <tr class="can-hidden">
+                        <td><a href="#">生活</a><b></b></td>
+                        <td><a href="#">国际</a><b></b></td>
+                        <td><a href="#">国内</a><b></b></td>
+                        <td><a href="#">体育</a><b></b></td>
+                        <td><a href="#">汽车</a><b></b></td>
+                        <td><a href="#">财经</a><b></b></td>
+                    </tr>
+                    <tr class="can-hidden">
+                        <td><a href="#">房产</a><b></b></td>
+                        <td><a href="#">时尚</a><b></b></td>
+                        <td><a href="#">国内</a><b></b></td>
+                        <td><a href="#">教育</a><b></b></td>
+                        <td><a href="#">游戏</a><b></b></td>
+                        <td><a href="#">人文</a></td>
+                    </tr>
+                    <tr class="can-hidden">
+                        <td colspan="2"><a href="#">创意</a><b></b></td>
+                        <td colspan="4"><a href="#">互联网+</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="divider"></div>
+            <div class="footer can-hidden">
+                <div class="btn-group">
+                    <div class="reporter">记者榜</div>
+                    <div class="media-rank">媒体榜</div>
+                    <div class="manage-subscribe">删除及排序</div>
+                </div>
+                <div class="less">
+                    收起
+                    <div class="up-triangle"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- 新闻内容容器 -->
+    <div class="content">
+    <!-- ====主页====================================================================================== -->
+        <div id="recomendation" class="container">
+            <div id="news-slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#news-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#news-slider" data-slide-to="1"></li>
+                    <li data-target="#news-slider" data-slide-to="2"></li>
+                    <li data-target="#news-slider" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/recom/timg1.jpg" alt="最心酸的儿童节">
+                        <div class="carousel-caption">
+                            <p>最心酸的儿童节</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/recom/timg2.jpg" alt="最心酸的儿童节">
+                        <div class="carousel-caption">
+                            <p>最心酸的儿童节</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/recom/timg3.jpg" alt="最心酸的儿童节">
+                        <div class="carousel-caption">
+                            <p>最心酸的儿童节</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--滚动热点-->
+            <!--<div class="row hotword">-->
+                <!--<div class="col-xs-2 ">-->
+                    <!--<span class="label label-danger hotword">热点</span>-->
+                <!--</div>-->
+                <!--<div class="col-xs-10">-->
+                    <!--<span class="hotword-frame">-->
+                        <!--<ul class="hotword-content">-->
+                             <!--<li class="hotword-item">-->
+                                <!--<span>13省高考报名人数下降</span>-->
+                                <!--<b class="hotword-right-arrow"></b>-->
+                            <!--</li>-->
+                            <!--<li class="hotword-item">-->
+                                <!--<span>中国奥运礼服</span>-->
+                                <!--<b class="hotword-right-arrow"></b>-->
+                            <!--</li>-->
+                            <!--<li class="hotword-item">-->
+                                <!--<span>希拉里中文竞选广告</span>-->
+                                <!--<b class="hotword-right-arrow"></b>-->
+                            <!--</li>-->
+                            <!--<li class="hotword-item">-->
+                                <!--<span>13省高考报名人数下降</span>-->
+                                <!--<b class="hotword-right-arrow"></b>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;左侧一张新闻图片的条目&ndash;&gt;-->
+            <!--<div class="row p1">-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/xidada.jpg" alt="习大大">-->
+                <!--</div>-->
+                <!--<div class="col-xs-8">-->
+                    <!--<p class="title">习近平讲给青少年的五堂公开课</p>-->
+                    <!--<p class="abstract">六一国际儿童节到来之际，习近平给</p>-->
+                    <!--<div class="news-info">-->
+                        <!--<span class="time">8小时前</span>-->
+                        <!--<span class="label label-danger news-category">置顶</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row p3">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="title">详解华为mate到底值不值得买</p>-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/4.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/5.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/6.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="news-info">-->
+                        <!--<span class="time">8小时前</span>-->
+                        <!--<span class="label label-danger news-category">置顶</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row p3">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="title">iOS10挑大梁 苹果WWDC将无硬件新品发布</p>-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/8.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/7.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/9.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="news-info">-->
+                        <!--<span class="time">19秒前</span>-->
+                        <!--<span class="label label-danger news-category"></span>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row p3">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="title">《魔兽》真实道具到底怎么样，让橘子君来告诉你</p>-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/10.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/11.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/12.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="news-info">-->
+                        <!--<span class="time">25秒前</span>-->
+                        <!--<span class="label label-primary news-category">猜你喜欢</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+             <!--<div class="row p1">-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/13.jpg" alt="习大大">-->
+                <!--</div>-->
+                <!--<div class="col-xs-8">-->
+                    <!--<p class="title">起底高考舞弊：间谍器材被运用</p>-->
+                    <!--<p class="abstract">51份提到利用作弊器舞弊，占到了总数的六</p>-->
+                    <!--<div class="news-info">-->
+                        <!--<span class="time">1分钟前</span>-->
+                        <!--<span class="label label-danger news-category">新浪新闻</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="row p3">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="title">你还没找到女票？可能机器人已经都能生孩子了！</p>-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/10.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/11.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-4">-->
+                    <!--<img src="images/recom/12.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-12">-->
+                    <!--<p class="news-info">-->
+                        <!--<span class="time">1分钟前</span>-->
+                        <!--<span class="label label-primary news-category">新浪新闻</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        </div>
+    <!-- ======百家内容从服务器拉取=================================================================================== -->
+        <div id="integrate" class="container">
+            
+        </div>
+    <!-- ===本地 主要内容从服务器拉取(轮播框除外)========================================================================================== -->
+        <div id="local" class="container">
+            <div id="news-slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#news-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#news-slider" data-slide-to="1"></li>
+                    <li data-target="#news-slider" data-slide-to="2"></li>
+                    <li data-target="#news-slider" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/local/timg.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>北京2016个人养老保险费用上涨</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/local/timg2.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>媒体解析人民币背面风景，北京西站曾是备选方案</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/local/timg3.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>今日头条新闻，北京多名小学生流鼻血</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- =====图片主要内容从服务器拉取============================================================================== -->
+        <div id="picture" class="container">
+            <div class="row p1-big">
+                <div class="col-xs-12">
+                    <img src="images/pictures/1.jpg" alt="">
+                    <div class="picture-info">
+                        <div class="picture-title">8岁男孩过马路被车撞飞瞬间</div>
+                        <div class="like">252</div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <!-- ========娱乐 内容从服务器拉取========================================================================= -->
+        <div id="amusement" class="container">
+            <div id="news-slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#news-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#news-slider" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/amusement/1.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>董璇产女高云翔当爸爸</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/amusement/2.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>李亚鹏乘机险迟到 礼貌道歉</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--滚动热点-->
+            <div class="row hotword">
+                <div class="col-xs-2 ">
+                    <span class="label label-danger hotword">热点</span>
+                </div>
+                <div class="col-xs-10">
+                    <span class="hotword-frame">
+                 <ul class="hotword-content">
+                     <li class="hotword-item">
+                         <span>贝嫂要生第五胎</span>
+                    <b class="hotword-right-arrow"></b>
+                    </li>
+                    <li class="hotword-item">
+                        <span>朱军表演杂技</span>
+                        <b class="hotword-right-arrow"></b>
+                    </li>
+                    <li class="hotword-item">
+                        <span>孙俪肌肉照</span>
+                        <b class="hotword-right-arrow"></b>
+                    </li>
+                    <li class="hotword-item">
+                        <span>贝嫂要生第五胎</span>
+                        <b class="hotword-right-arrow"></b>
+                    </li>
+                    </ul>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+    <!-- ======社会 主要内容从服务器拉取============================================================================= -->
+        <div id="society" class="container">
+            <div id="news-slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#news-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#news-slider" data-slide-to="1"></li>
+                    <li data-target="#news-slider" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/society/1.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>男子疑因心情不好淹死自家狗</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/society/2.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>8岁男孩被汽车撞飞瞬间</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/society/3.jpg" alt="">
+                        <div class="carousel-caption">
+                            <p>考生高考前撕书减压</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--滚动热点-->
+            <div class="row hotword">
+                <div class="col-xs-2 ">
+                    <span class="label label-danger hotword">热点</span>
+                </div>
+                <div class="col-xs-10">
+                    <span class="hotword-frame">
+                 <ul class="hotword-content">
+                     <li class="hotword-item">
+                         <span>小女孩过目不忘</span>
+                    <b class="hotword-right-arrow"></b>
+                    </li>
+                    <li class="hotword-item">
+                        <span>买沙发6年后提货</span>
+                        <b class="hotword-right-arrow"></b>
+                    </li>
+                    <li class="hotword-item">
+                        <span>为女儿偷鸡腿</span>
+                        <b class="hotword-right-arrow"></b>
+                    </li>
+                    <li class="hotword-item">
+                        <span>小女孩过目不忘</span>
+                        <b class="hotword-right-arrow"></b>
+                    </li>
+                    </ul>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/app.js"></script>
+</body>
+
+</html>

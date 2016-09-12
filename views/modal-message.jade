@@ -1,0 +1,18 @@
+// 模态窗口
+// 用于和用户交互
+div#user-message-dialog.modal.fade(role='dialog')
+ div.modal-dialog.modal-sm
+  div.modal-content
+    // 具体的窗口内容
+    div.modal-header
+      button.close(type = 'button', data-dismiss='modal') &times;
+      h4.modal-title#dialog-title 修改新闻
+        span#news-id
+    
+    //modal dialog body
+    div.modal-body
+        p#user-message 你好吗
+        
+    div.modal-footer
+        button.btn.btn-default(data-dismiss='modal') 关闭
+        button.btn.btn-primary 确定

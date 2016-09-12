@@ -1,0 +1,334 @@
+/*主页样式表*/
+/*顶部工具栏样式*/
+header{
+    background: #3e98f0;
+    margin-bottom: 8px;
+}
+.container{
+    max-width: 640px;
+}
+.toolbar {
+    position: relative;
+    min-width: 320px;
+    height: 44px;
+    z-index: 2;
+    background-color: #3e98f0;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    background-image: url(../images/bg-news-logo_344ce44.png);
+    background-repeat: no-repeat;
+    background-position: center 6px;
+    background-size: 77px auto;
+    -webkit-background-size: 77px auto;
+}
+
+/*左侧百度及主页图标向左侧浮动*/
+.toolbar-left {
+    float: left;
+}
+
+/*右侧的查找和订阅图标向右侧浮动*/
+.toolbar-right {
+    float: right;
+}
+
+/*工具栏上的图标样式*/
+.toolbar-btn {
+    display: inline-block;
+    width: 34px;
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    border: 0;
+    background-image: url(../images/bg-new-toolbar_6e9bc53.png);
+    background-size: 40px 500px;
+    -webkit-background-size: 40px 500px;
+    background-repeat: no-repeat;
+}
+
+.btn-baidu {
+    background-position: center 4px;
+}
+
+.btn-home {
+    background-position: center -463px;
+    margin-left: 10px;
+}
+
+.btn-search {
+    background-position: center -162px;
+    margin-right: 10px;
+}
+
+.btn-subscribe {
+    background-position: center -107px;
+}
+
+/*导航栏样式*/
+nav {
+    position: relative;
+    background-color: #3e98f0;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    z-index: 2;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+nav a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+}
+
+nav a:link {
+    color: white;
+}
+
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:active {
+    color: white;
+}
+
+/*分割线样式*/
+.divider {
+    height: 1px;
+    margin: 0 10px;
+    background-color: #5dabf0;
+}
+
+/*表格样式*/
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr {
+    height: 28px;
+}
+
+td {
+    position: relative;
+    text-align: center;
+}
+
+td b {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    height: 12px;
+    width: 1px;
+    display: block;
+    overflow-y: hidden;
+    /*background-color: white;*/
+    background-color: #5dabf0;
+}
+
+/*底部工具栏（记者榜、媒体帮、删除及排序）样式*/
+.footer {
+    height: 28px;
+    line-height: 28px;
+
+}
+
+.btn-group {
+    float: left;
+}
+
+.reporter, .media-rank, .manage-subscribe {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.less {
+    float: right;
+}
+
+.down-triangle {
+    display: inline-block;
+    margin-left: 10px;
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid #3e98f0;
+    border-left: 5px solid #3e98f0;
+    border-right: 5px solid #3e98f0;
+    border-top: 5px solid white;
+}
+
+.up-triangle {
+    display: inline-block;
+    margin-left: 10px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #3e98f0;
+    border-left: 5px solid #3e98f0;
+    border-right: 5px solid #3e98f0;
+    border-bottom: 5px solid white;
+}
+
+.can-hidden {
+    display: none;
+}
+
+/*=====内容区样式===============================================*/
+.content{
+    padding: 0;
+    margin: 0 -15px;
+}
+#recommendation {
+    display: block;
+}
+#integrate{
+    display: none;
+}
+
+#local{
+    display: none;
+}
+
+#picture{
+    display: none;
+}
+#amusement{
+    display: none;
+}
+#society{
+    display: none;
+}
+/*滑动框内指示器样式*/
+.carousel-caption {
+    left: 0;
+    bottom: -30px;
+    width: 100%;
+}
+
+.carousel-caption p {
+    background: black;
+    text-align: left;
+}
+.carousel-inner img{
+    width: 100%;
+}
+/*滚动热点*/
+.hotword {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.hotword-frame {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+}
+
+.hotword-content {
+    display: inline-block;
+    list-style-type: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 0;
+}
+
+.hotword-item {
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+
+.hotword-right-arrow {
+    display: inline-block;
+    width: 13px;
+    height: 20px;
+    float: right;
+    background: url(../images/arrorw-right_dde8906.png) no-repeat;
+    background-size: auto 14px;
+    background-position: 50% 50%;
+}
+
+/*为没个新闻框加入下边框*/
+.row {
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+/*独立的新闻框，只有一张图片，靠左侧显示*/
+.p1 img {
+    width: 100%;
+    height: 100%;
+}
+.p1 .col-xs-4{
+    padding-right: 0;
+}
+.title {
+    font-size: 16px;
+}
+
+.p1 .abstract {
+    font-size: 12px;
+    color: grey;
+}
+
+.news-info {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.time {
+    float: left;
+    color: grey;
+}
+
+.news-category {
+    float: right;
+}
+
+/*三张图片的新闻狂样式*/
+.p3 img {
+    width: 100%;
+    height: 100%;
+}
+.p3 .col-xs-4{
+    padding-right: 0;
+}
+.p3 .col-xs-4:nth-child(4){
+    padding-right: 15px;
+}
+/*无图片的新闻框*/
+.p0 .abstract{
+    font-size: 12px;
+    color: grey;
+}
+/*图片新闻框的样式*/
+.p1-big .picture-title{
+    display: inline-block;
+    line-height: 24px;
+}
+.p1-big img{
+    width: 100%;
+    height: auto ;
+    margin-bottom: 5px;
+}
+.p1-big .like{
+    display: inline-block;
+    float:  right;
+    text-align: right;
+    line-height: 24px;
+    width: 50px;
+    height: 24px;
+    background: url(../images/bg-image_36c5a7b.png) no-repeat -6px -68px;
+    background-size: 50px 150px;
+}
